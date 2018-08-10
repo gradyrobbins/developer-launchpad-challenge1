@@ -7,38 +7,41 @@ var primearray1 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 5
 
 var happyArray1 = [1, 7, 10, 13, 19, 23, 28, 31, 32, 44, 49, 68, 70, 79, 82, 86, 91, 94, 97, 100];
 
+var happyPrimeArray = [];
 
 
 
 // this isn't looping properly; i only return one value, "7", when i execute the function
-function callback(primearray1, happyArray1){
-  
-  var happyPrimeArray = [];
+function comparethem() {
+
 
   for (var j = 0; j < happyArray1.length; j++) {
-     
-      for (var i = 0; i < primearray1.length; i++) {
-          if(primearray1[i] === happyArray1[j]){
-            happyPrimeArray.push(happyArray1[j])
-            return happyPrimeArray;
-          }
-        
+    let currentHappyValue = happyArray1[j];
+    for (var i = 0; i < primearray1.length; i++) {
+      let currentPrimeValue = primearray1[i];
+      if (currentPrimeValue === currentHappyValue) {
+        happyPrimeArray.push(currentHappyValue)
       }
-      
-  }
+
+    }
     
   }
 
-function filter(primearray1, happyArray1, callback){
-  return callback(primearray1, happyArray1);
 }
+comparethem()
+console.log(happyPrimeArray)
 
-var filtered = filter(primearray1, happyArray1, callback);
-  console.log(filtered);
-    
 
-let userInput = prompt("what is your number?");
-console.log("userInput" , userInput);
+// function filter(primearray1, happyArray1, callback) {
+//   return callback(primearray1, happyArray1);
+// }
+
+// var filtered = filter(primearray1, happyArray1, callback);
+// console.log(filtered);
+
+
+// let userInput = prompt("what is your number?");
+// console.log("userInput" , userInput);
 
 
 // // if arrayPrimeNumbers.includes(userInput)
