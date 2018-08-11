@@ -1,7 +1,18 @@
+:root{
+  --base-padding : 0.8em;
+  
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+#jquery-container{
+  font-size: var(--base-padding)
 }
 
 /* .button {
