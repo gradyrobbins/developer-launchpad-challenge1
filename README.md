@@ -1,9 +1,7 @@
-# developer-launchpad-challenge1
-happy numbers/prime numbers/ happy prime numbers
+# developer-launchpad-challenge 1
+### happy numbers / prime numbers / happy prime numbers
 
-all credit to : www.developerlaunchpad.com
-
-test test test
+more info : www.developerlaunchpad.com
 
 Happy Primes
 Given the numbers 313, 331, 367 what comes next? Doctor Who fans will know.
