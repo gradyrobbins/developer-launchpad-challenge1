@@ -1,35 +1,71 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Nashville Software School</title>
-    <link rel="stylesheet" href="./styles/styles.css">
+  <meta charset="utf-8">
+  <title>Developer Launch Pad exercise 1</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
 </head>
 
 <body>
-    <nav></nav>
+  <nav></nav>
 
-    <header>
-        <h2>Hello World!  All credit to :  <a href="https://www.developerlaunchpad.com">developerlaunchpad</a></h2>
-    </header>
+  <!-- <header>Header</header> -->
+  <h1> DeveloperLaunchPad : Happy Prime Numbers</h1>
+  <h2>More info :  <a href="https://www.developerlaunchpad.com">developerlaunchpad</a></h2>
+  <div id="display-container">
+    <article>
+      <img src="img/Murph.jpeg" alt="murph" />
+      <h3>Some numbers simply have a positive attitude. They're fun to play with.
+        <hr />Happy Numbers &lt; 100 :</h3>
+      <section id="happy"></section>
+    </article>
+    <article>
+      <img src="/img/NSS.jpeg" alt="NSS" />
+      <h3>A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and
+        itself.
+        <hr />
+        Prime Numbers &lt; 100 :</h3>
+      <section id="prime"></section>
+    </article>
+    <!-- <article>
+      <img src="img/rubberducky.jpeg" alt="rubberduck" />
+      <section id="happyprime">Happy + Prime Numbers &lt; 100 : </section>
+    </article> -->
+  </div>
+  <h3> Level 1:
+    Guess if your number (between 1 and 100) is a Happy + Prime Numbers:
 
-    <div>
-        <h2>jQuery Magic:</h2>
-        <div id="jquery-container"></div>
-        <div id="bloop"></div>
-            
-    </div>
+    <form action="">
+      <input type="number" id="number" name="quantity" min="1" max="100" maxlength="3">
+      <button type="button" id="guess" onclick="myFunction()">guess</button>
+    </form>
+    <p id="demo"></p>
+  </h3>
+  <hr />
 
-    <footer></footer>
+  <h3>Level 2: Generate a list of happy prime numbers between 0 and 500</h3>
+  <div id="level2">
+  </div>
+  <hr />
+  <div id="level3">
+    <h3>Level 3: User's guess validated (if correct) OR the nearest correct value to the user's guess is returned</h3>
+    <form action="">
+      <input type="number" id="level3input" name="quantity" min="1" max="500" maxlength="3">
+      <button type="button" id="guess" onclick="level3guess()">Guess</button>
+    </form>
+    <p id="demo3"></p>
+  </div>
+  <hr />
 
-<!-- JQuery via CDN -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<!-- my .js -->
-<script src="./scripts/main.js"></script>
-<script src="./scripts/writeToDOM.js"></script>
 
+
+  <footer class="footer"> &copy; 2019 Grady M. Robbins </footer>
+
+  <script src="main.js"></script>
 </body>
+
 </html>
