@@ -123,6 +123,7 @@ function level3guess() {
 
     let counts = x.concat(y)
 
+    // https://stackoverflow.com/questions/8584902/get-closest-number-out-of-array
     let closest = counts.reduce(function(prev, curr) {
       return (Math.abs(curr - userguess) < Math.abs(prev - userguess) ? curr : prev);
     });
@@ -130,13 +131,14 @@ function level3guess() {
     // console.log(`closest happy prime to your guess is ${closest}`);
 
 
-    // data validation:
-    // Is user Input valid:less than one, greater than 100, or NaN
+    // data validation :
+    // Is user Input invalid? for example any guess that is less than one, greater than 500, or NaN
     if (isNaN(userguess) || userguess < 1 || userguess > 500) {
         alert("invalid entry")
         return;
     }
-    
+
+    // if the user made a valid guess:
     if (counts.includes(userguess)) {
         text = `Your guess :   ${userguess} is a HAPPY PRIME`;
     } else (text = `${userguess} is not a happy prime, the nearest number to your guess is ${closest}`)
