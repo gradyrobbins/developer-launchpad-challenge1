@@ -7,7 +7,7 @@ happy.innerHTML += happy100;
 
 let prime = document.getElementById("prime")
 let prime100 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
-// below array via google search.  copy/pasta
+// prime500 array via google search.  copy/pasta
 let prime500 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499
 ];
 prime.innerHTML += prime100;
@@ -27,8 +27,10 @@ function getMatch(a, b) {
     }
     return matches;
 }
+
 let x = getMatch(prime100, happy100)
 happyprime100.push(x);
+console.log(`happyprime100 : ${happyprime100}`)
 // happyprime.innerHTML += happyprime100
 
 
@@ -107,26 +109,38 @@ level2.innerHTML += `${happyprime100},${happyprime500}`
 
 
 //level 3 challenge
-// let level3 = document.getElementById("level3");
+// concatenating  2 arrays (x and y) into a new array (a), of all the happyprimes under 500
+// let a = x.concat(y)
+// console.log("a :", a)
+
+let level3 = document.getElementById("level3");
 
 //this function captures user input, validates it, and determines if the user's guess is correct or not
-// function level3guess() {
-//     var x, text;
+function level3guess() {
+    var userguess, text;
+    // Get the value of the user's guess: i.e. the value of input field with id="level3input"
+    userguess = parseInt(document.getElementById("level3input").value);
 
-//     // Get the value of the input field with id="number"
-//     x = parseInt(document.getElementById("level3input").value);
+    let counts = x.concat(y)
 
-//     // data validation:
-//     // Is user Input valid:less than one, greater than 100, or NaN
-//     if (isNaN(x) || x < 1 || x > 500) {
-//         alert("invalid entry")
-//         return;
-//     }
-//     let z = [];
-//     z.push(happyprime100, happyprime500)
-//     console.log(`happyprimes 1 - 500 : ${z}`)
-//     if (z.includes(x)) {
-//         text = `Your guess :   ${x} is a HAPPY PRIME`;
-//     } else (text = `${x} is not a happy prime, try again`)
-//     document.getElementById("demo3").innerHTML = text;
-// }
+    // https://stackoverflow.com/questions/8584902/get-closest-number-out-of-array
+    let closest = counts.reduce(function(prev, curr) {
+      return (Math.abs(curr - userguess) < Math.abs(prev - userguess) ? curr : prev);
+    });
+
+    // console.log(`closest happy prime to your guess is ${closest}`);
+
+
+    // data validation :
+    // Is user Input invalid? for example any guess that is less than one, greater than 500, or NaN
+    if (isNaN(userguess) || userguess < 1 || userguess > 500) {
+        alert("invalid entry")
+        return;
+    }
+
+    // if the user made a valid guess:
+    if (counts.includes(userguess)) {
+        text = `Your guess :   ${userguess} is a HAPPY PRIME`;
+    } else (text = `${userguess} is not a happy prime, the nearest number to your guess is ${closest}`)
+    document.getElementById("demo3").innerHTML = text;
+}
